@@ -1,0 +1,22 @@
+{
+  "name": "fluent-ssr-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fluentui/merge-styles": "^8.1.2",
+    "@fluentui/react": "^8.19.1",
+    "next": "11.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7.28.0",
+    "eslint-config-next": "11.0.0"
+  }
+}
