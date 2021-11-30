@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
         }
     });
 
-    return { ...page, styleTags: stylesheet.getRules(true) };
+    return { ...page, styleTags: stylesheet.getRules(true), serializedStylesheet: stylesheet.serialize()  };
   }
 
   render() {
@@ -31,6 +31,10 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <style type="text/css" dangerouslySetInnerHTML={{ __html: this.props.styleTags }} />
+          <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
+            window.FabricConfig = window.FabricConfig || {};
+            window.FabricConfig.serializedStylesheet = ${this.props.serializedStylesheet};
+          ` }} />
         </Head>
         <body>
           <Main />
